@@ -1,0 +1,160 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');*/ 
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); /*Este URL contiene los tipos de letra o fuente solo hay que seleccionar el de uso*/
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet');
+
+
+:root { /*Declaramos las variables de los colores y fuente */
+    --color_primario: #000000;
+    --color_secundario: #f6f6f6;
+    --color_terciario: #22d4fd;
+    --color_hover: #272727;
+
+    --fuente_montserrat: "Montserrat", sans-serif;
+    --fuente_krona: "Krona One", sans-serif; 
+
+}
+
+
+* { 
+    padding: 0;
+    margin:0;
+}
+
+
+body {
+    background-color: var(--color_primario); /*Asi se usan las variables*/
+    color: var(--color_secundario);
+    /*height: 100vh;   V=viewport viewport varía de dispositivo a dispositivo, por ejemplo, siempre se le pone 100
+    en computadoras, tabletas y teléfonos móviles, cada pantalla tiene dimensiones diferentes , H=height altura*/ 
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 2% 0% 0% 8%; /*CSS padding google el 8%es el valor del margin de la presentacion,linea 39 para que queden alineados*/
+}
+
+.header_menu {
+    display: flex;
+    gap: 80px;
+}
+
+.header_menu_link{
+    font-family: var(--fuente_montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color_terciario);
+    text-decoration: none;
+}
+
+
+
+.Presentacion {
+    padding: 5% 8%; /*Modificar el margen para que no queden tan separados, los textos y la imagen*/
+    display: flex; /* Alinea los textos ELEMENTO PADRE todos estos datos se sacan de la pagina*/ 
+    align-items: center;    /* elemento hijo*/ 
+    justify-content: space-between; /*Se saca de la pagina*/
+    gap: 82px /*Para tener un espacio entre el contenido principal y la imagen*/;
+}
+
+.Presentacion_Contenido { /*Para hacer el espacio entre titulo, texto e imagen*/
+    width:  50%; /*El espacio entre la imagen y el texto, van de la mano con el margin*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*crear el espacio de textos, iconos o botones que existen entre ellos */
+}
+
+.Presentacion_Contenido_titulo {
+    font-size: 2.25rem; /*Tamaño de la fuente*/
+    font-family: var(--fuente_krona); /*Se saco de google para el tipo de letra pero antes importamos el URL*/
+
+}
+
+.Titulo-destaque { /* .nombre de la clase */
+    color: var(--color_terciario);
+}
+
+.presentacion_contenido_texto {
+    font-size: 1.5rem;
+    font-family: var(--fuente_montserrat); /*Se saco de google para el tipo de letrapero antes importamos el URL*/
+}
+
+.Presentacion_enlaces {
+    display: flex; /* coloca los cuadrados uno al lado del otro */
+    justify-content: space-between;
+    flex-direction: column; /*Acomodarlos en columna*/
+    align-items: center; /*para centrarlos        dentro del display:flex*/
+    gap: 32px;
+}
+
+.Presentacion_enlaces_subtitulo { /*Subtitulo: Accede a mis redes*/
+    font-family: var(--fuente_krona);
+    font-size: 1.5rem;
+    font-weight: 400;  /*Grosor de las letrar REGULAR */
+
+}
+
+.Presentacion_enlaces_link {
+    width: 50%;  /*Anchura del bloque botones*/
+    /*background-color: #22d4fd; Color de fondo de los botones*/
+    text-align: center;
+    padding: 21.5px 0; /*El primer valor es el vertical(largo), el segundo valor es de la horizontal(anchura) PARA QUE EL CONTENIDO QUEDE CENTRADO*/
+    border-radius: 8px; /*Darle un borde curveado*/
+    font-family: var(--fuente_montserrat); /*Tipo de fuente*/
+    font-size: 1.5rem;
+    font-weight: 600; /*Grosor de las letrar*/
+    text-decoration: none; /*Para eliminar la linea de del link o URL*/
+    color: var(--color_secundario);/*Para el color de la letra*/
+    border: 2px solid var(--color_terciario); /*2px= Tamaño del boerde, solid=estilo del border*/
+    display: flex; /*Alinea iconos con la palabra o texto*/
+    justify-content: center; /*Una vez alineado*/
+    gap: 10px;
+
+}
+ 
+.Presentacion_enlaces_link:hover {  
+    background-color: var(--color_hover);
+}
+
+.contenido_imagen {
+    width: 50%;
+}
+
+
+.footer {
+    background-color: var(--color_terciario);
+    padding: 1.5rem;
+    color: #000000;
+    text-align: center;
+    font-family: var(--fuente_montserrat);
+    font-size: 24px;
+    font-weight: 400;
+
+}
+
+.Nombre_del_desarrollador {
+    font-family: "Playwrite NO", cursive;
+    font-size: 1.37rem;
+    font-weight: 400;
+     
+}
+
+@media (max-width: 1200px) { /*Cuando es menor a 1200, la imagen se acomoda en modo mobile*/
+
+    .header{
+        padding: 10%;
+    }
+
+    .header_menu{
+        justify-content: center;
+    }
+
+    .Presentacion { /*Para cambiar el flex directrion a column en al area del contendio*/
+        flex-direction: column-reverse; /*Para cambiar la posicion de la imagen arriba*/
+        padding: 5%;
+    }
+
+    .Presentacion_Contenido{
+        width: 100%;
+    }
+}
+
